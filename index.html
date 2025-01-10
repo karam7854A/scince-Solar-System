@@ -42,7 +42,7 @@
     width: 20px;
     height: 20px;
     background: url('https://solar-system.store/th-removebg-preview.png') no-repeat center center;
-    background-size: cover
+    background-size: 50px
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0);
     animation: move-star 3s ease-out forwards;
@@ -50,11 +50,11 @@
 
 @keyframes move-star {
     0% {
-        transform: scale(5) translate(0, 0);
+        transform: scale(1) translate(0, 0);
         opacity: 1;
     }
     100% {
-        transform: scale(3) translate(300px, 300px);
+        transform: scale(0) translate(300px, 300px);
         opacity: 0;
     }
 }
