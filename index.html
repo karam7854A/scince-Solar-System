@@ -39,22 +39,22 @@
 
     .shooting-star {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     background: url('https://solar-system.store/th-removebg-preview.png') no-repeat center center;
     background-size: cover
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0);
-    animation: move-star 1s ease-out forwards;
+    animation: move-star 3s ease-out forwards;
 }
 
 @keyframes move-star {
     0% {
-        transform: scale(1) translate(0, 0);
+        transform: scale(5) translate(0, 0);
         opacity: 1;
     }
     100% {
-        transform: scale(0) translate(300px, 300px);
+        transform: scale(3) translate(300px, 300px);
         opacity: 0;
     }
 }
@@ -63,7 +63,7 @@
 </head>
 <body>
   <div id="info">
-    <p><strong>SOLAR System</strong></p>
+    <p><strong>SOLAR System press on the planets to see the information</strong></p>
     <p>Made by :   Karam A.</p>
   </div>
   <div id="planet-info"></div>
