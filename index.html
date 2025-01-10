@@ -59,6 +59,37 @@
     const backgroundTexture = textureLoader.load('https://solar-system.store/textures/stars.jpg');
     scene.background = backgroundTexture;
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000; 
+    height: 100vh;
+    cursor: pointer;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: move-star 1s ease-out forwards;
+}
+
+@keyframes move-star {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) translate(300px, 300px);
+        opacity: 0;
+    }
+}
+
+
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
@@ -201,6 +232,24 @@ Mass is over 300,000 times that of Eart` };
     `
   }
 ];
+
+
+
+document.addEventListener('click', (event) => {
+    
+    const star = document.createElement('div');
+    star.classList.add('shooting-star');
+    
+  
+    star.style.left = `${event.clientX}px`;
+    star.style.top = `${event.clientY}px`;
+  
+    document.body.appendChild(star);
+    
+    star.addEventListener('animationend', () => {
+        star.remove();
+    });
+});
 
 
     const planetMeshes = [];
