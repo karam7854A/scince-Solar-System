@@ -36,6 +36,28 @@
       border-radius: 5px;
       display: none;
     }
+
+    .shooting-star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: move-star 1s ease-out forwards;
+}
+
+@keyframes move-star {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) translate(300px, 300px);
+        opacity: 0;
+    }
+}
+
   </style>
 </head>
 <body>
@@ -59,26 +81,7 @@
     const backgroundTexture = textureLoader.load('https://solar-system.store/textures/stars.jpg');
     scene.background = backgroundTexture;
 
-.shooting-star {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    animation: move-star 1s ease-out forwards;
-}
 
-@keyframes move-star {
-    0% {
-        transform: scale(1) translate(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0) translate(300px, 300px);
-        opacity: 0;
-    }
-}
 
 
     // Lighting
