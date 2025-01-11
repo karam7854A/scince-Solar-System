@@ -36,31 +36,32 @@
       border-radius: 5px;
       display: none;
     }
-
-    .shooting-star {
-    position: absolute;
-    width:  40px;
-    height: 40px;
-    background: url('https://solar-system.store/th-removebg-preview.png') no-repeat center center;
-      background-size: cover;
-      border-radius: 50%;
-      pointer-events: none;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.4);
-       animation:2s linear forwards; /* مدة الرسوم المتحركة */
-
+.shooting-star {
+  position: absolute;
+  width:  40px;
+  height: 40px;
+  background: url('https://solar-system.store/th-removebg-preview.png') no-repeat center center;
+  background-size: cover;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.4);
+  animation: move-star 2s linear forwards; /* تفعيل الرسوم المتحركة */
 }
 
 @keyframes move-star {
-    0% {
-        transform: scale(1) translate(0, 0);
-        opacity: 2;
-    }
-    100% {
-        transform: scale(1) translate(300px, 300px);
-        opacity: 0.4;
-    }
+  0% {
+    transform: scale(1) translate(0, 0); /* البداية في النقطة التي تم النقر عليها */
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(300px, 300px); /* الحركة عبر الشاشة */
+    opacity: 0.4; /* تقلل الشفافية تدريجيًا */
+  }
 }
 
+
+
+    
   </style>
 </head>
 <body>
