@@ -37,14 +37,7 @@
       display: none;
     }
 
-
-
-
     
-  </style>
-</head>
-<body>
-
   .shooting-star {
   position: absolute;
   width:  40px;
@@ -59,14 +52,20 @@
 
 @keyframes move-star {
   0% {
-    transform: scale(1) translate(0, 0); /* البداية في النقطة التي تم النقر عليها */
+    transform: scale(1) translate(0, 0);
     opacity: 1;
   }
   100% {
-    transform: scale(1) translate(300px, 300px); /* الحركة عبر الشاشة */
-    opacity: 0.4; /* تقلل الشفافية تدريجيًا */
+    transform: scale(1) translate(300px, 300px); 
+    opacity: 0.4; 
   }
 }
+
+    
+  </style>
+</head>
+<body>
+
   <div id="info">
     <p><strong>SOLAR System press on the planets to see the information</strong></p>
     <p>Made by :   Karam A.</p>
@@ -233,25 +232,29 @@ Mass is over 300,000 times that of Eart` };
   }
 ];
 
+
+       let stars = [];
+let maxStars = 10;
+
 document.addEventListener('click', (event) => {
     const star = document.createElement('div');
     star.classList.add('shooting-star');
-    star.style.left = `${event.clientX}px`;
-    star.style.top = `${event.clientY}px`;
+    star.style.left = `${event.clientX - 20}px`; 
+    star.style.top = `${event.clientY - 20}px`;
 
-    console.log("Star created at:", event.clientX, event.clientY); // تحقق من إحداثيات النجمة
+    console.log("Star created at:", event.clientX, event.clientY);
 
     document.body.appendChild(star);
     stars.push(star);
 
     if (stars.length > maxStars) {
-        const oldStar = stars.shift(); // إزالة الأقدم
+        const oldStar = stars.shift();
         oldStar.remove();
     }
 
     setTimeout(() => {
         star.remove();
-    }, 2000); // تأكد من أن المدة تتوافق مع الرسوم المتحركة
+    }, 2000);
 });
 
 
