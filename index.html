@@ -46,7 +46,7 @@
       border-radius: 50%;
       pointer-events: none;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.4);
-       animation: move-star 2s linear forwards; /* مدة الرسوم المتحركة */
+       animation:2s linear forwards; /* مدة الرسوم المتحركة */
 
 }
 
@@ -231,22 +231,29 @@ Mass is over 300,000 times that of Eart` };
 ];
 
 
+const maxStars = 50; // العدد الأقصى للنجوم
+const stars = [];
 
 document.addEventListener('click', (event) => {
-    
     const star = document.createElement('div');
     star.classList.add('shooting-star');
-    
-  
+
     star.style.left = `${event.clientX}px`;
     star.style.top = `${event.clientY}px`;
-  
+
     document.body.appendChild(star);
-    
-    star.addEventListener('animationend', () => {
+    stars.push(star);
+
+    if (stars.length > maxStars) {
+        const oldStar = stars.shift(); // إزالة الأقدم
+        oldStar.remove();
+    }
+
+    setTimeout(() => {
         star.remove();
-    });
+    }, 2000); // تأكد من أن المدة تتوافق مع الرسوم المتحركة
 });
+
 
 
     const planetMeshes = [];
