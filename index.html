@@ -13,8 +13,7 @@
     canvas {
       display: block;
     }
-    
-      #info {
+    #info {
       position: absolute;
       left: 10px;
       bottom: 10px;
@@ -37,38 +36,42 @@
       border-radius: 5px;
       display: none;
     }
-    
-  .shooting-star {
-  position: absolute;
-  width:  40px;
-  height: 40px;
-  background: url('https://solar-system.store/th-removebg-preview.png') no-repeat center center;
-  background-size: cover;
-  border-radius: 50%;
-  pointer-events: none;
-  box-shadow: 0 0 0px rgba(255, 255, 255, 0.8), 0 0 0px rgba(255, 255, 255, 0.4);
-  animation: move-star  0.5s linear forwards; 
+
+
+    .comet {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('https://solar-system.store/textures/th-removebg-preview.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: move-star 1s ease-out forwards;
 }
 
-@keyframes move-star {
-  0% {
-    transform: scale(1) translate(0, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1) translate( 5000px, 0px); 
-    opacity: 0.4; 
-  }
+@keyframes move-comet {
+    0% {
+        transform: scale(4) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) translate(300px, 300px);
+        opacity: 0;
+    }
 }
 
-    
+
+
+
   </style>
 </head>
 <body>
-    
   <div id="info">
-    <p><strong>SOLAR System</strong></p>
-    <p>Made by :   Karam A.</p>
+    <p><strong>SOLAR System
+
+      click on the planets to see information
+    </strong></p>
+    <p>Made by : Karam A.</p>
   </div>
   <div id="planet-info"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -83,7 +86,7 @@
 
     // Add Background Texture
     const textureLoader = new THREE.TextureLoader();
-    const backgroundTexture = textureLoader.load('https://solar-system.store/textures/stars.webp');
+    const backgroundTexture = textureLoader.load('https://solar-system.store/textures/stars.jpg');
     scene.background = backgroundTexture;
 
 
@@ -98,7 +101,7 @@
     scene.add(pointLight);
 
     // Sun
-    const sunTexture = textureLoader.load('https://solar-system.store/textures/high_res_sun.webp');
+    const sunTexture = textureLoader.load('https://solar-system.store/textures/high_res_sun.jpg');
     const sunGeometry = new THREE.SphereGeometry(25, 128, 128);
     const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
     const sun = new THREE.Mesh(sunGeometry, sunMaterial);
@@ -113,7 +116,7 @@ Mass is over 300,000 times that of Eart` };
    const planets = [
   { 
     name: 'Mercury', 
-    texture: 'https://solar-system.store/textures/high_res_mercury.webp', 
+    texture: 'https://solar-system.store/textures/high_res_mercury.jpg', 
     size: 12, 
     distance: 45, 
     info: `
@@ -128,7 +131,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Venus', 
-    texture: 'https://solar-system.store/textures/high_res_venus.webp', 
+    texture: 'https://solar-system.store/textures/high_res_venus.jpg', 
     size: 14, 
     distance: 70, 
     info: `
@@ -144,7 +147,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Earth', 
-    texture: 'https://solar-system.store/textures/high_res_earth.webp', 
+    texture: 'https://solar-system.store/textures/high_res_earth.jpg', 
     size: 15, 
     distance: 100, 
     info: `
@@ -158,7 +161,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Mars', 
-    texture: 'https://solar-system.store/textures/high_res_mars.webp', 
+    texture: 'https://solar-system.store/textures/high_res_mars.jpg', 
     size: 13, 
     distance: 150, 
     info: `
@@ -173,7 +176,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Jupiter', 
-    texture: 'https://solar-system.store/textures/high_res_jupiter.webp', 
+    texture: 'https://solar-system.store/textures/high_res_jupiter.jpg', 
     size: 22, 
     distance: 200, 
     info: `
@@ -189,7 +192,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Saturn', 
-    texture: 'https://solar-system.store/textures/high_res_saturn.webp', 
+    texture: 'https://solar-system.store/textures/high_res_saturn.jpg', 
     size: 20, 
     distance: 250, 
     info: `
@@ -203,7 +206,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Uranus', 
-    texture: 'https://solar-system.store/textures/high_res_uranus.webp', 
+    texture: 'https://solar-system.store/textures/high_res_uranus.jpg', 
     size: 17, 
     distance: 300, 
     info: `
@@ -217,7 +220,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Neptune', 
-    texture: 'https://solar-system.store/textures/high_res_neptune.webp', 
+    texture: 'https://solar-system.store/textures/high_res_neptune.jpg', 
     size: 17, 
     distance: 350, 
     info: `
@@ -233,30 +236,23 @@ Mass is over 300,000 times that of Eart` };
 ];
 
 
-       let stars = [];
-let maxStars = 10;
-
 document.addEventListener('click', (event) => {
+    // إنشاء عنصر الشهاب
     const star = document.createElement('div');
-    star.classList.add('shooting-star');
-    star.style.left = `${event.clientX - 20}px`; 
-    star.style.top = `${event.clientY - 20}px`;
-
-    console.log("Star created at:", event.clientX, event.clientY);
-
+    star.classList.add('comet');
+    
+    // تحديد مكان الشهاب بناءً على موقع الماوس
+    comet.style.left = `${event.clientX}px`;
+    comet.style.top = `${event.clientY}px`;
+    
+    // إضافة الشهاب إلى الصفحة
     document.body.appendChild(star);
-    stars.push(star);
-
-    if (stars.length > maxStars) {
-        const oldStar = stars.shift();
-        oldStar.remove();
-    }
-
-    setTimeout(() => {
-        star.remove();
-    }, 2000);
+    
+    // إزالة الشهاب بعد انتهاء الأنيميشن
+    comet.addEventListener('animationend', () => {
+        comet.remove();
+    });
 });
-
 
     const planetMeshes = [];
     const hoveredPlanets = new Set(); // Track hovered planets
@@ -279,13 +275,11 @@ document.addEventListener('click', (event) => {
       mesh.userData = { name: planetData.name, info: planetData.info };
       scene.add(mesh);
       planetMeshes.push(mesh);
-
       // Add Earth's Moon
       if (planetData.name === 'Earth') {
         earthMesh = mesh;
 
-        const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon.
-
+        const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon.jpg');
         const moonGeometry = new THREE.SphereGeometry(5, 64, 64);
         const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
         earthMoon = new THREE.Mesh(moonGeometry, moonMaterial);
@@ -305,7 +299,7 @@ document.addEventListener('click', (event) => {
         ];
 
         jupiterMoonData.forEach((moonData) => {
-          const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon.webp');
+          const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon.jpg');
           const moonGeometry = new THREE.SphereGeometry(moonData.size, 64, 64);
           const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
           const moonMesh = new THREE.Mesh(moonGeometry, moonMaterial);
@@ -322,7 +316,7 @@ document.addEventListener('click', (event) => {
 
         const ringGeometry = new THREE.RingGeometry(25, 40, 64);
         const ringMaterial = new THREE.MeshBasicMaterial({
-          map: textureLoader.load('https://solar-system.store/textures/saturn_ring.webp'),
+          map: textureLoader.load('https://solar-system.store/textures/saturn_ring.png'),
           side: THREE.DoubleSide,
           transparent: true,
         });
