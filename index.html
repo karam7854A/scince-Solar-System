@@ -231,16 +231,13 @@ Mass is over 300,000 times that of Eart` };
   }
 ];
 
-
-const maxStars = 50; // العدد الأقصى للنجوم
-const stars = [];
-
 document.addEventListener('click', (event) => {
     const star = document.createElement('div');
     star.classList.add('shooting-star');
-
     star.style.left = `${event.clientX}px`;
     star.style.top = `${event.clientY}px`;
+
+    console.log("Star created at:", event.clientX, event.clientY); // تحقق من إحداثيات النجمة
 
     document.body.appendChild(star);
     stars.push(star);
@@ -254,7 +251,6 @@ document.addEventListener('click', (event) => {
         star.remove();
     }, 2000); // تأكد من أن المدة تتوافق مع الرسوم المتحركة
 });
-
 
 
     const planetMeshes = [];
