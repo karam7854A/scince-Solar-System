@@ -43,7 +43,7 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    background: url('https://solar-system.store/textures/th-removebg-preview.png') no-repeat center center;
+    background: url('https://solar-system.store/th-removebg-preview.png') no-repeat center center;
     background-size: cover;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
@@ -102,7 +102,7 @@
     scene.add(pointLight);
 
     // Sun
-    const sunTexture = textureLoader.load('https://solar-system.store/textures/high_res_sun-min.webp');
+    const sunTexture = textureLoader.load('https://solar-system.store/texture/high_res_sun-min.webp');
     const sunGeometry = new THREE.SphereGeometry(25, 128, 128);
     const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
     const sun = new THREE.Mesh(sunGeometry, sunMaterial);
@@ -162,7 +162,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Mars', 
-    texture: 'https://solar-system.store/textures/high_res_mars-min.webp', 
+    texture: 'https://solar-system.store/texture/high_res_mars-min.webp', 
     size: 13, 
     distance: 150, 
     info: `
@@ -177,7 +177,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Jupiter', 
-    texture: 'https://solar-system.store/textures/high_res_jupiter-min.webp', 
+    texture: 'https://solar-system.store/texture/high_res_jupiter-min.webp', 
     size: 22, 
     distance: 200, 
     info: `
@@ -193,7 +193,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Saturn', 
-    texture: 'https://solar-system.store/textures/high_res_saturn-min.webp', 
+    texture: 'https://solar-system.store/texture/high_res_saturn-min.webp', 
     size: 20, 
     distance: 250, 
     info: `
@@ -207,7 +207,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Uranus', 
-    texture: 'https://solar-system.store/textures/high_res_uranus-min.webp', 
+    texture: 'https://solar-system.store/texture/high_res_uranus-min.webp', 
     size: 17, 
     distance: 300, 
     info: `
@@ -221,7 +221,7 @@ Mass is over 300,000 times that of Eart` };
   },
   { 
     name: 'Neptune', 
-    texture: 'https://solar-system.store/textures/high_res_neptune-min.webp', 
+    texture: 'https://solar-system.store/texture/high_res_neptune-min.webp', 
     size: 17, 
     distance: 350, 
     info: `
@@ -280,7 +280,7 @@ document.addEventListener('click', (event) => {
       if (planetData.name === 'Earth') {
         earthMesh = mesh;
 
-        const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon-min.webp');
+        const moonTexture = textureLoader.load('https://solar-system.store/texture/high_res_moon-min.webp');
         const moonGeometry = new THREE.SphereGeometry(5, 64, 64);
         const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
         earthMoon = new THREE.Mesh(moonGeometry, moonMaterial);
@@ -300,7 +300,7 @@ document.addEventListener('click', (event) => {
         ];
 
         jupiterMoonData.forEach((moonData) => {
-          const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon-min.webp');
+          const moonTexture = textureLoader.load('https://solar-system.store/texture/high_res_moon-min.webp');
           const moonGeometry = new THREE.SphereGeometry(moonData.size, 64, 64);
           const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
           const moonMesh = new THREE.Mesh(moonGeometry, moonMaterial);
