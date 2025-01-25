@@ -14,53 +14,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Solar System</title>
   <style>
+   #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #0d47a1, #000 80%);
+            overflow: hidden;
+            z-index: 1000;
+        }
 
-    #loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: black;
-    z-index: 999;
-    overflow: hidden;
-}
+        .stars {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: url('https://i.imgur.com/oTbbRId.png') repeat;
+            animation: star-twinkle 50s linear infinite;
+        }
 
-#stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+        .twinkling {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: url('https://i.imgur.com/ZlCavZp.png') repeat;
+            animation: twinkling 2s linear infinite;
+        }
 
-#loading-text {
-    position: relative;
-    color: white;
-    z-index: 1;
-    text-align: center;
-}
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: fade-in 2s infinite;
+        }
 
-#progress-bar {
-    width: 80%;
-    height: 10px;
-    background: #333;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-top: 20px;
-}
+        #progress-bar {
+            width: 80%;
+            height: 20px;
+            margin: 20px auto 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
 
-#progress {
-    height: 100%;
-    width: 0;
-    background: #4caf50;
-    transition: width 0.2s;
-    border-radius: 5px;
-}
+        #progress {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(to right, #42a5f5, #00e5ff);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+            transition: width 0.2s ease-in-out;
+        }
+
+        @keyframes fade-in {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes twinkling {
+            0% { background-position: 0 0; }
+            100% { background-position: -1000px 1000px; }
+        }
+
+        @keyframes star-twinkle {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+
+        #content {
+            display: none;
+            text-align: center;
+            color: #fff;
+        }
+
+        #content h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        #content p {
+            font-size: 1.5rem;
+        }
 
     body {
        margin: 0;
