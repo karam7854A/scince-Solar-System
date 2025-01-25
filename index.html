@@ -42,33 +42,6 @@ see this code <!DOCTYPE html>
   </style>
 </head>
 <body>
-<div id="loading-screen">
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-        <h1>Loading the Universe...</h1>
-        <div id="progress-bar">
-            <div id="progress"></div>
-        </div>
-    </div>
-
-    <div id="content">
-        <h1>Welcome to the Solar System!</h1>
-        <p>Your 3D experience is ready.</p>
-    </div>
-
-    <script src="script.js"></script>
-    <div id="loading-screen">
-        <h1>Get Ready!</h1>
-        <div id="progress-bar">
-            <div id="progress"></div>
-        </div>
-    </div>
-
-    <div id="content" style="display: none;">
-        <h1>Welcome to the Solar System!</h1>
-        <p>Your 3D experience is ready.</p>
-    </div>
-
     <script src="script.js"></script>
   <amp-auto-ads type="adsense"
         data-ad-client="ca-pub-1143626683706586">
@@ -314,76 +287,6 @@ Mass is over 300,000 times that of Eart` };
         scene.add(saturnRing);
       }
     });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const canvas = document.getElementById("stars");
-    const ctx = canvas.getContext("2d");
-    const loadingScreen = document.getElementById("loading-screen");
-    const content = document.getElementById("content");
-    const progressBar = document.getElementById("progress");
-    let progress = 0;
-
-    // Resize canvas
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    // Stars setup
-    const stars = [];
-    const starCount = 150;
-
-    for (let i = 0; i < starCount; i++) {
-        stars.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            radius: Math.random() * 1.5,
-            alpha: Math.random(),
-            twinkle: Math.random() * 0.05
-        });
-    }
-
-    // Draw stars animation
-    function drawStars() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        stars.forEach((star) => {
-            ctx.beginPath();
-            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2, false);
-            ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
-            ctx.fill();
-
-            // Twinkling effect
-            star.alpha += star.twinkle;
-            if (star.alpha <= 0 || star.alpha >= 1) {
-                star.twinkle = -star.twinkle;
-            }
-        });
-        requestAnimationFrame(drawStars);
-    }
-    drawStars();
-
-    // Progress bar logic
-    const interval = setInterval(() => {
-        progress += 5;
-        progressBar.style.width = progress + "%";
-        if (progress >= 100) {
-            clearInterval(interval);
-        }
-    }, 900); // 900ms for a total of ~18 seconds
-
-    // Auto-hide after 18 seconds with fade-out effect
-    setTimeout(() => {
-        loadingScreen.style.transition = "opacity 2s ease-out";
-        loadingScreen.style.opacity = "0";
-
-        setTimeout(() => {
-            loadingScreen.style.display = "none";
-            content.style.display = "block";
-        }, 2000); // Match fade-out time (2 seconds)
-    }, 18000);
-});
-
-
-
-       
 
     // Raycaster for interaction
     const raycaster = new THREE.Raycaster();
