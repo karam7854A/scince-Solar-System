@@ -327,54 +327,10 @@ Mass is over 300,000 times that of Eart` };
           jupiterMoons.push({ mesh: moonMesh, distance: moonData.distance });
         });
       }
-
-
-      // الحصول على العناصر
-const loadingScreen = document.getElementById('loading-screen');
-const progressText = document.getElementById('progress-text');
-
-// إدارة التحميل باستخدام THREE.LoadingManager
-const loadingManager = new THREE.LoadingManager(
-  () => {
-    // عند الانتهاء من التحميل
-    loadingScreen.classList.add('fade-out');
-    setTimeout(() => {
-      loadingScreen.style.display = 'none';
-    }, 1000); // 1 ثانية لتأثير الإخفاء
-  },
-  (url, itemsLoaded, itemsTotal) => {
-    // تحديث نسبة التحميل
-    const progress = Math.round((itemsLoaded / itemsTotal) * 100);
-    progressText.textContent = `Loading... ${progress}%`;
-  }
-);
-
-// مثال لتحميل الأصول (Textures أو Models)
-const textureLoader = new THREE.TextureLoader(loadingManager);
-textureLoader.load('https://solar-system.store/tea.jpg');
-
-// إعداد المشهد (Scene) - مثال بسيط
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('solar-system') });
-
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-const geometry = new THREE.SphereGeometry(1, 32, 32);
-const material = new THREE.MeshBasicMaterial({ color: 0x0077ff });
-const sphere = new THREE.Mesh(geometry, material);
-scene.add(sphere);
-
-camera.position.z = 5;
-
-function animate() {
-  requestAnimationFrame(animate);
-  sphere.rotation.y += 0.01;
-  renderer.render(scene, camera);
-}
-animate();
-      
+     setTimeout(() => {
+      const loadingScreen = document.getElementById('loadingScreen');
+      loadingScreen.classList.add('hidden');
+    }, 15000); // 15000ms = 15 ثانية
       // Add Saturn Ring
       if (planetData.name === 'Saturn') {
         saturnMesh = mesh;
