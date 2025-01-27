@@ -320,7 +320,7 @@ document.addEventListener('click', (event) => {
     // Mouse Move Event for Hover
     window.addEventListener('mousemove', (event) => {
       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 1 + 1;
 
       raycaster.setFromCamera(mouse, camera);
   const intersects = raycaster.intersectObjects(planetMeshes, true); // Exclude the Sun
