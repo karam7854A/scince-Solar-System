@@ -11,22 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Solar System</title>
   <style>
-    /* شاشة اللودينغ */
-#loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #000428, #004e92);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  z-index: 1000;
-}    
     body {
     }
     canvas {
@@ -288,11 +272,7 @@ Mass is over 300,000 times that of Eart` };
           jupiterMoons.push({ mesh: moonMesh, distance: moonData.distance });
         });
       }
-     setTimeout(() => {
-      const loadingScreen = document.getElementById('loadingScreen');
-      loadingScreen.classList.add('hidden');
-    }, 15000); // 15000ms = 15 ثانية
-      // Add Saturn Ring
+     
       if (planetData.name === 'Saturn') {
         saturnMesh = mesh;
 
