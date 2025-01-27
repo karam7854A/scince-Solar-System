@@ -70,7 +70,7 @@
      <script>
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.9, 1000);
+    const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 3, 1050);
     camera.position.set(0, 110, 550);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
