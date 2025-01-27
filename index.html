@@ -87,7 +87,7 @@
     const pointLight = new THREE.PointLight(0xffffff, 1.5);
     pointLight.position.set(0, 0, 0);
     scene.add(pointLight);
-const sunTexture = textureLoader.load('https://solar-system.store/textures/high_res_sun.jpg');
+const sunTexture = textureLoader.load('https://solar-system.store/texture/high_res_sun-min.webp');
     const sunGeometry = new THREE.SphereGeometry(25, 128, 128);
     const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
     const sun = new THREE.Mesh(sunGeometry, sunMaterial);
@@ -221,23 +221,7 @@ Mass is over 300,000 times that of Eart` };
   }
 ];
 
-document.addEventListener('click', (event) => {
-    // إنشاء عنصر الشهاب
-    const star = document.createElement('div');
-    star.classList.add('comet');
-    
-    // تحديد مكان الشهاب بناءً على موقع الماوس
-    comet.style.left = `${event.clientX}px`;
-    comet.style.top = `${event.clientY}px`;
-    
-    // إضافة الشهاب إلى الصفحة
-    document.body.appendChild(star);
-    
-    // إزالة الشهاب بعد انتهاء الأنيميشن
-    comet.addEventListener('animationend', () => {
-        comet.remove();
-    });
-});
+
 
     const planetMeshes = [];
     const hoveredPlanets = new Set(); // Track hovered planets
