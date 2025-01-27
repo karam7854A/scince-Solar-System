@@ -305,7 +305,6 @@ Mass is over 300,000 times that of Eart` };
       mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
       raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObjects(planetMeshes, true); // Exclude the Sun
 
       hoveredPlanets.clear();
       planetMeshes.forEach((planet) => (planet.scale.set(1, 1, 1))); // Reset scale
