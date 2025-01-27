@@ -39,31 +39,7 @@
       display: none;
     }
 
-
-
-    .comet {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: url('https://solar-system.store/th-removebg-preview.png') no-repeat center center;
-    background-size: cover;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    animation: move-star 1s ease-out forwards;
 }
-
-@keyframes move-comet {
-    0% {
-        transform: scale(4) translate(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0) translate(300px, 300px);
-        opacity: 0;
-    }
-}
-
-
 
 
   </style>
@@ -94,7 +70,7 @@
      <script>
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.9, 1000);
     camera.position.set(0, 110, 550);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -105,10 +81,6 @@
     const backgroundTexture = textureLoader.load('https://solar-system.store/texture/stars-min.webp');
     scene.background = backgroundTexture;
 
-
-
-
-    // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
 
@@ -116,7 +88,6 @@
     pointLight.position.set(0, 0, 0);
     scene.add(pointLight);
 
-    // Sun
     const sunTexture = textureLoader.load('https://solar-system.store/texture/high_res_sun-min.webp');
     const sunGeometry = new THREE.SphereGeometry(25, 128, 128);
     const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
@@ -250,26 +221,6 @@ Mass is over 300,000 times that of Eart` };
     `
   }
 ];
-
-
-document.addEventListener('click', (event) => {
-    // إنشاء عنصر الشهاب
-    const star = document.createElement('div');
-    star.classList.add('comet');
-    
-    // تحديد مكان الشهاب بناءً على موقع الماوس
-    comet.style.left = `${event.clientX}px`;
-    comet.style.top = `${event.clientY}px`;
-    
-    // إضافة الشهاب إلى الصفحة
-    document.body.appendChild(star);
-    
-    // إزالة الشهاب بعد انتهاء الأنيميشن
-    comet.addEventListener('animationend', () => {
-        comet.remove();
-    });
-});
-
     const planetMeshes = [];
     const hoveredPlanets = new Set(); // Track hovered planets
     let jupiterMesh, saturnMesh, saturnRing, earthMesh, earthMoon, jupiterMoons = [];
