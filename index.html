@@ -221,13 +221,14 @@ Mass is over 300,000 times that of Eart` };
     `
   }
 ];
-    const planetMeshes = [];
+       
+  const planetMeshes = [];
     const hoveredPlanets = new Set(); // Track hovered planets
     let jupiterMesh, saturnMesh, saturnRing, earthMesh, earthMoon, jupiterMoons = [];
 
     planets.forEach((planetData) => {
       // Orbit Path
-      const orbitGeometry = new THREE.RingGeometry(planetData.distance 2, planetData.distance + 0.2, 128);
+      const orbitGeometry = new THREE.RingGeometry(planetData.distance - 0.2, planetData.distance + 0.2, 128);
       const orbitMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
       const orbitMesh = new THREE.Mesh(orbitGeometry, orbitMaterial);
       orbitMesh.rotation.x = Math.PI / 2;
@@ -246,7 +247,7 @@ Mass is over 300,000 times that of Eart` };
       if (planetData.name === 'Earth') {
         earthMesh = mesh;
 
-        const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon-min.webp');
+        const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon.jpg');
         const moonGeometry = new THREE.SphereGeometry(5, 64, 64);
         const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
         earthMoon = new THREE.Mesh(moonGeometry, moonMaterial);
@@ -266,7 +267,7 @@ Mass is over 300,000 times that of Eart` };
         ];
 
         jupiterMoonData.forEach((moonData) => {
-          const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon-min.webp');
+          const moonTexture = textureLoader.load('https://solar-system.store/textures/high_res_moon.jpg');
           const moonGeometry = new THREE.SphereGeometry(moonData.size, 64, 64);
           const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
           const moonMesh = new THREE.Mesh(moonGeometry, moonMaterial);
@@ -283,7 +284,7 @@ Mass is over 300,000 times that of Eart` };
 
         const ringGeometry = new THREE.RingGeometry(25, 40, 64);
         const ringMaterial = new THREE.MeshBasicMaterial({
-          map: textureLoader.load('https://solar-system.store/saturn_ring.png'),
+          map: textureLoader.load('https://solar-system.store/textures/saturn_ring.png'),
           side: THREE.DoubleSide,
           transparent: true,
         });
