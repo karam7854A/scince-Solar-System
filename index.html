@@ -283,7 +283,7 @@ Mass is over 300,000 times that of Eart` };
 
         const ringGeometry = new THREE.RingGeometry(25, 40, 64);
         const ringMaterial = new THREE.MeshBasicMaterial({
-          map: textureLoader.load('https://solar-system.store/textures/saturn_ring.png'),
+          map: textureLoader.load('https://solar-system.store/saturn_ring.png'),
           side: THREE.DoubleSide,
           transparent: true,
         });
@@ -300,8 +300,8 @@ Mass is over 300,000 times that of Eart` };
 
     // Mouse Move Event for Hover
     window.addEventListener('mousemove', (event) => {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      mouse.x = (event.clientX / window.innerWidth) * 7 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 7 + 1;
 
       raycaster.setFromCamera(mouse, camera);
   const intersects = raycaster.intersectObjects(planetMeshes, true); // Exclude the Sun
