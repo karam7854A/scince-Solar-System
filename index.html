@@ -259,6 +259,12 @@ Mass is over 300,000 times that of Eart` };
         scene.add(earthMoon);
       }
 
+      const scaleFactor = 0.01; // لتقليص المسافات
+planetData.forEach((planet, index) => {
+    planet.distance *= scaleFactor;
+});
+
+
       // Add Jupiter Moons
       if (planetData.name === 'Jupiter') {
         jupiterMesh = mesh;
