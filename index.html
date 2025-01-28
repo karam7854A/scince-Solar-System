@@ -232,7 +232,7 @@ Mass is over 300,000 times that of Eart` };
 
     planets.forEach((planetData) => {
       // Orbit Path
-      const orbitGeometry = new THREE.RingGeometry(planetData.distance - 0.9, planetData.distance + 0.9, 128);
+      const orbitGeometry = new THREE.RingGeometry(planetData.distance - 0.1, planetData.distance + 0.9, 128);
       const orbitMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
       const orbitMesh = new THREE.Mesh(orbitGeometry, orbitMaterial);
       orbitMesh.rotation.x = Math.PI / 2;
