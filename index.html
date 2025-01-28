@@ -343,13 +343,12 @@ Mass is over 300,000 times that of Eart` };
       planetMeshes.forEach((planet, index) => {
         if (!hoveredPlanets.has(planet)) {
           // Orbital speed inversely proportional to square root of distance
-         planetData.orbitSpeed = 1 / planetData.distance; // Faster for closer planets
+          0.009 / Math.sqrt(planets[index].distance)
           const angle = Date.now() * orbitalSpeed;
           planet.position.x = planets[index].distance * Math.cos(angle);
           planet.position.z = planets[index].distance * Math.sin(angle);
         }
-        planet.rotation.y += 0.01; // Planet rotation
-      });
+        planet.rotation.y += 0.01; /
 
       // Animate Earth's Moon
       if (earthMesh && earthMoon) {
