@@ -340,15 +340,16 @@ Mass is over 300,000 times that of Eart` };
     function animate() {
       requestAnimationFrame(animate);
 
-      planetMeshes.forEach((planet, index) => {
-        if (!hoveredPlanets.has(planet)) {
-          // Orbital speed inversely proportional to square root of distance
-          0.009 / Math.sqrt(planets[index].distance)
-          const angle = Date.now() * orbitalSpeed;
-          planet.position.x = planets[index].distance * Math.cos(angle);
-          planet.position.z = planets[index].distance * Math.sin(angle);
-        }
-        planet.rotation.y += 0.01; /
+   planetMeshes.forEach((planet, index) => {
+    if (!hoveredPlanets.has(planet)) {
+        // حساب السرعة المدارية بحيث تكون عكسية مع الجذر التربيعي للمسافة
+        const orbitalSpeed = 0.009 / Math.sqrt(planets[index].distance); // السرعة أعلى للكواكب الأقرب
+        const angle = Date.now() * orbitalSpeed;
+        planet.position.x = planets[index].distance * Math.cos(angle);
+        planet.position.z = planets[index].distance * Math.sin(angle);
+    }
+    planet.rotation.y += 0.01;
+});
 
       // Animate Earth's Moon
       if (earthMesh && earthMoon) {
