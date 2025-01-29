@@ -1,16 +1,18 @@
 body {
-     main {
-    color: rgb(255, 255, 255);
-    padding: 19px;
-  }
+  main {
+    color: rgb(255, 106, 0);
     font-family: Arial, sans-serif;
-    background: <img src="earth.jpg" alt="Earth Image">
+    font-size: 20px;
+    background: rgb(255, 128, 0);  }
+  
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #00a4fc, #00ff00);
     color: #333;
     line-height: 1.6;
   }
   
   header {
-    background-color: #2d6a4f;
+    background-color: #ff9100;
     padding: 20px;
     text-align: center;
     color: white;
@@ -21,13 +23,8 @@ body {
     margin: 0;
   }
   
- 
-  
-  h2 {
-    color: #2d6a4f;
-    text-align: center;
-    font-size: 36px;
-  }
+
+
   
   p {
     font-size: 18px;
@@ -37,7 +34,7 @@ body {
   
   img {
     width: 100%;
-    max-width: 40px;
+    max-width: 60px;
     height: auto;
     display: block;
     margin: 20px auto;
@@ -47,7 +44,7 @@ body {
   }
   
   a {
-    color: #2d6a4f;
+    color: #ff6f00;
     text-decoration: none;
   }
   
