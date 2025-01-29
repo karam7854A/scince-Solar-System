@@ -20,21 +20,6 @@
      
     `
   },];
-  
-    const texture = textureLoader.load(planetData.texture);
-      const geometry = new THREE.SphereGeometry(planetData.size, 128, 128);
-      const material = new THREE.MeshStandardMaterial({ map: texture });
-      const mesh = new THREE.Mesh(geometry, material);
-      mesh.position.x = planetData.distance;
-      mesh.userData = { name: planetData.name, info: planetData.info };
-      scene.add(mesh);
-      planetMeshes.push(mesh);
-    // Animation Loop
-    function animate() {
-      requestAnimationFrame(animate);
-
-  planetMeshes.forEach((planet, index) => {
-        if (!hoveredPlanets.has(planet)) {
         planet.rotation.y += 0.01; // Planet rotation
       });</script>
   <header>
@@ -171,7 +156,7 @@ History:
 Early Earth was a molten mass that cooled down to form a solid crust.
 Life began in the oceans, eventually spreading to land.
 Major events like the formation of the atmosphere, the rise of plants, and the age of dinosaurs shaped the planet we know today.
-<img src="earth.jpg" alt="Earth Image">
+
 </p>
   </a>
   <footer>
