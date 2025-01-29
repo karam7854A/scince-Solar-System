@@ -42,13 +42,13 @@ body {
   }
   
   a {
-    color: # 1b5e20;
-    text-decoration: none;
-  }
+     color: rgb(255, 106, 0);
+    font-family: Arial, sans-serif;
   
-  a:hover {
-    color: #1b5e20;
-    text-decoration: underline;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #058015d1, #009600);
+    color: # 1b5e20;
+    line-height: 1.6;
   }
   
   footer {
