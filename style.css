@@ -1,5 +1,5 @@
 body {
-  a {
+  main {
     color: rgb(255, 234, 96);
     font-family: Arial, sans-serif;
     font-size: 20px;}
@@ -11,10 +11,10 @@ body {
   }
   
   header {
-    background-color: #ff9100;
+    background-color: #0040ffd1;
     padding: 20px;
     text-align: center;
-    color: white;
+    color: rgb(255, 238, 106);
   }
   
   header h1 {
