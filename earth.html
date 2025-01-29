@@ -10,10 +10,17 @@
 </head>
 <body>
   <script>
-     const planets = [
-       name: Earth
+ const planets = [
+   { 
+    name: 'Earth', 
     texture: 'https://solar-system.store/texture/high_res_earth-min.webp', 
-       ]
+    size: 15, 
+    distance: 100 , 
+    info: `
+     
+    `
+  },];
+  
     const texture = textureLoader.load(planetData.texture);
       const geometry = new THREE.SphereGeometry(planetData.size, 128, 128);
       const material = new THREE.MeshStandardMaterial({ map: texture });
