@@ -1,11 +1,12 @@
 body {
-  main {
-    color: rgb(255, 106, 0);
+  a {
+    color: rgb(255, 234, 96);
     font-family: Arial, sans-serif;
+    font-size: 20px;}
   
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #058015d1, #009600);
-    color: # 1b5e20;
+    background: linear-gradient(to right, #0040ffd1, #0099ff);
+    color: #333;
     line-height: 1.6;
   }
   
@@ -41,35 +42,4 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
   
-  a {
-     color: rgb(255, 106, 0);
-    font-family: Arial, sans-serif;
-  
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #058015d1, #009600);
-    color: # 1b5e20;
-    line-height: 1.6;
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  footer a {
-    color: #f4f4f4;
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    color: #ff9800;
-    padding: 10px 20px;
-    background-color: #2d6a4f;
-    border-radius: 5px;
-  }
-  
+ 
