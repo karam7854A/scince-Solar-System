@@ -375,15 +375,12 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
       }
 
       // Update Saturn Ring Position
-      if (saturnRing && saturnMesh) {{
+      if (saturnRing && saturnMesh) {
         saturnRing.position.copy(saturnMesh.position);
       }
 
       renderer.render(scene, camera);
     }
-       planetMeshes.push(saturnRing);
-       }
-
     animate();
 
     // Handle window resize
