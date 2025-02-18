@@ -71,11 +71,6 @@
     }
 
 }
-    
-    
-    
-
-
   </style>
 </head>
 <body>
@@ -231,12 +226,9 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
     `
   }
 ];
-
-
-
     const planetMeshes = [];
     const hoveredPlanets = new Set(); // Track hovered planets
-    let jupiterMesh, saturnMesh,saturnRing, earthMesh, earthMoon, jupiterMoons = [];
+    let jupiterMesh, saturnMesh, saturnRing, earthMesh, earthMoon, jupiterMoons = [];
 
     planets.forEach((planetData) => {
       // Orbit Path
@@ -255,6 +247,7 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
       mesh.userData = { name: planetData.name, info: planetData.info };
       scene.add(mesh);
       planetMeshes.push(mesh);
+
       // Add Earth's Moon
       if (planetData.name === 'Earth') {
         earthMesh = mesh;
@@ -266,6 +259,7 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
         earthMoon.position.set(planetData.distance + 25, 0, 0);
         scene.add(earthMoon);
       }
+
       // Add Jupiter Moons
       if (planetData.name === 'Jupiter') {
         jupiterMesh = mesh;
@@ -303,10 +297,8 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
         saturnRing.rotation.x = Math.PI / 2;
         saturnRing.position.copy(saturnMesh.position);
         scene.add(saturnRing);
-        
-
       }
-    })
+    });
 
     // Raycaster for interaction
     const raycaster = new THREE.Raycaster();
@@ -318,14 +310,21 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
       mouse.y = -(event.clientY / window.innerHeight) * 1.8 + 1;
 
       raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObjects(planetMeshes, true); // Exclude the Sun
+      const intersects = raycaster.intersectObjects(planetMeshes, true);
 
       hoveredPlanets.clear();
       planetMeshes.forEach((planet) => (planet.scale.set(1, 1, 1))); // Reset scale
+      if (saturnRing) saturnRing.scale.set(1, 1, 1); // Reset ring scale
+
       if (intersects.length > 0) {
         const planet = intersects[0].object;
         hoveredPlanets.add(planet);
-        planet.scale.set(5, 5, 5); // Enlarge hovered planet
+        planet.scale.set(1.2, 1.2, 1.2); // Enlarge hovered planet
+
+        // Scale Saturn's ring if Saturn is hovered
+        if (planet === saturnMesh && saturnRing) {
+          saturnRing.scale.set(1.2, 1.2, 1.2); // Scale the ring
+        }
       }
     });
 
@@ -343,12 +342,13 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
       } else {
         infoBox.style.display = 'none';
       }
-    })
+    });
+
     // Animation Loop
     function animate() {
       requestAnimationFrame(animate);
 
-  planetMeshes.forEach((planet, index) => {
+      planetMeshes.forEach((planet, index) => {
         if (!hoveredPlanets.has(planet)) {
           // Orbital speed inversely proportional to square root of distance
           const orbitalSpeed = 0.009 / Math.sqrt(planets[index].distance); // Faster for closer planets
@@ -358,7 +358,6 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
         }
         planet.rotation.y += 0.01; // Planet rotation
       });
-
 
       // Animate Earth's Moon
       if (earthMesh && earthMoon) {
