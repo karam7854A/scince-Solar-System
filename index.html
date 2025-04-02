@@ -307,7 +307,7 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
         const planet = intersects[0].object;
         const { name, info } = planet.userData;
         infoBox.style.display = 'block';
-        infoBox.innerHTML = <strong>${name}</strong><br>${info};
+        infoBox.innerHTML = <strong>${name}</strong><br>${info}>>;
       } else {
         infoBox.style.display = 'none';
       }
