@@ -86,6 +86,43 @@
       { name: 'Neptune', texture: 'https://solar-system.store/texture/high_res_neptune-min.webp', size: 17, distance: 350, info: '<a href="/neptune.html">Explore more!</a>' }
     ];
 
+
+    planets.forEach((planetData) => {
+  // Orbit Path
+  const orbitGeometry = new THREE.RingGeometry(planetData.distance - 0.1, planetData.distance + 0.9, 128);
+  const orbitMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+  const orbitMesh = new THREE.Mesh(orbitGeometry, orbitMaterial);
+  orbitMesh.rotation.x = Math.PI / 2;
+  scene.add(orbitMesh);
+
+  // Planet Mesh
+  const texture = textureLoader.load(planetData.texture);
+  const geometry = new THREE.SphereGeometry(planetData.size, 128, 128);
+  const material = new THREE.MeshStandardMaterial({ map: texture });
+  const mesh = new THREE.Mesh(geometry, material);
+  mesh.position.x = planetData.distance;
+  mesh.userData = { name: planetData.name, info: planetData.info };
+  scene.add(mesh);
+  planetMeshes.push(mesh);
+
+  // Add Saturn Ring
+  if (planetData.name === 'Saturn') {
+    saturnMesh = mesh;
+
+    // Saturn Ring Geometry
+    const ringGeometry = new THREE.RingGeometry(30, 40, 64);  // Adjust ring sizes here if needed
+    const ringMaterial = new THREE.MeshBasicMaterial({
+      map: textureLoader.load('https://solar-system.store/saturn_ring.png'),  // Make sure the link is correct
+      side: THREE.DoubleSide,  // Ensure ring is visible from all sides
+      transparent: true,
+    });
+    saturnRing = new THREE.Mesh(ringGeometry, ringMaterial);
+    saturnRing.rotation.x = Math.PI / 2;  // Rotate ring properly
+    saturnRing.position.copy(saturnMesh.position);  // Position it around Saturn
+    scene.add(saturnRing);
+  }
+});
+
     const planetMeshes = [];
     const hoveredPlanets = new Set();
     let earthMesh, earthMoon, jupiterMesh, jupiterMoons = [];
@@ -118,17 +155,6 @@
         earthMoon.position.set(planetData.distance + 25, 0, 0);
         scene.add(earthMoon);
       }
-
-      const ringGeometry = new THREE.RingGeometry(25, 40, 64);
-const ringMaterial = new THREE.MeshBasicMaterial({
-  map: textureLoader.load('https://solar-system.store/saturn_ring.png'),
-  side: THREE.DoubleSide,
-  transparent: true,
-});
-const saturnRing = new THREE.Mesh(ringGeometry, ringMaterial);
-saturnRing.rotation.x = Math.PI / 2;
-saturnRing.position.copy(saturnMesh.position);
-scene.add(saturnRing);
 
 
       // Add Jupiter Moons
