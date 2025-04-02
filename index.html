@@ -105,7 +105,7 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
     const sunGeometry = new THREE.SphereGeometry(25, 128, 128);
     const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
     const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-    sun.userData = { name: 'Sun', info: <a href="/Sun.html">Explore more!</a> };
+    sun.userData = {<a> name: 'Sun', info: <a href="/Sun.html">Explore more!</a> };
     scene.add(sun);
 
 
