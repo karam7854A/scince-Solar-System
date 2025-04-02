@@ -119,6 +119,18 @@
         scene.add(earthMoon);
       }
 
+      const ringGeometry = new THREE.RingGeometry(25, 40, 64);
+const ringMaterial = new THREE.MeshBasicMaterial({
+  map: textureLoader.load('https://solar-system.store/saturn_ring.png'),
+  side: THREE.DoubleSide,
+  transparent: true,
+});
+const saturnRing = new THREE.Mesh(ringGeometry, ringMaterial);
+saturnRing.rotation.x = Math.PI / 2;
+saturnRing.position.copy(saturnMesh.position);
+scene.add(saturnRing);
+
+
       // Add Jupiter Moons
       if (planetData.name === 'Jupiter') {
         jupiterMesh = mesh;
