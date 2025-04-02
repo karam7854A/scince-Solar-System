@@ -105,7 +105,7 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
     const sunGeometry = new THREE.SphereGeometry(25, 128, 128);
     const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
     const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-    sun.userData = {<a> name: 'Sun', info: <a href="/Sun.html">Explore more!</a> };
+    sun.userData = `<a> name: 'Sun', info: <a href="/Sun.html">Explore more!</a> `;
     scene.add(sun);
 
 
@@ -115,10 +115,11 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
     texture: 'https://solar-system.store/texture/high_res_mercury-min.webp', 
     size: 12, 
     distance:  45, 
-    info: 
+    info: `
       <strong></strong><br>
       Mercury is the closest planet to the Sun and the smallest in the Solar System4
        <a href="/mercury.html">Explore more!</a>
+       `
     
   },
   { 
@@ -126,9 +127,10 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
     texture: 'https://solar-system.store/texture/high_res_venus-min.webp', 
     size: 14, 
     distance: 	70 , 
-    info: 
+    info: `
       <strong></strong><br>
         <a href="/venus.html">Explore more!</a>
+        `
     
   },
   { 
@@ -136,61 +138,61 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
     texture: 'https://solar-system.store/texture/high_res_earth-min.webp', 
     size: 15, 
     distance: 100 , 
-    info: 
+    info: `
       <strong></strong><br>
       Only known planet to harbor life.</br>
       <a href="/earth.html">Explore more!</a>
-    
+    `
   },
   { 
     name: 'Mars', 
     texture: 'https://solar-system.store/texture/high_res_mars-min.webp', 
     size: 13, 
     distance: 150 , 
-    info: 
+    info: `
       <strong></strong><br>
        <a href="/mars.html">Explore more!</a>
-    
+    `
   },
   { 
     name: 'Jupiter', 
     texture: 'https://solar-system.store/texture/high_res_jupiter-min.webp', 
     size: 22, 
     distance: 200 , 
-    info: 
+    info: `
       <strong></strong><br>
         <a href="/jupiter.html">Explore more!</a>
-    
+    `
   },
   { 
     name: 'Saturn', 
     texture: 'https://solar-system.store/texture/high_res_saturn-min.webp', 
     size: 20, 
     distance: 250  , 
-    info: 
+    info: `
       <strong></strong><br>
        <a href="/saturn.html">Explore more!</a>
-    
+    `
   },
   { 
     name: 'Uranus', 
     texture: 'https://solar-system.store/texture/high_res_uranus-min.webp', 
     size: 17, 
     distance: 300, 
-    info: 
+    info: `
       <strong></strong><br>
       <a href="/uranus.html">Explore more!</a>
-    
+    `
   },
   { 
     name: 'Neptune', 
     texture: 'https://solar-system.store/texture/high_res_neptune-min.webp', 
     size: 17, 
     distance:  350, 
-    info: 
+    info: `
       <strong></strong><br>
        <a href="/neptune.html">Explore more!</a>
-    
+    `
   }
 ];
     const planetMeshes = [];
