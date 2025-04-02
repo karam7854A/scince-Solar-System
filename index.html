@@ -105,24 +105,6 @@
   scene.add(mesh);
   planetMeshes.push(mesh);
 
-  // Add Saturn Ring
-  if (planetData.name === 'Saturn') {
-    saturnMesh = mesh;
-
-    // Saturn Ring Geometry
-    const ringGeometry = new THREE.RingGeometry(30, 40, 64);  // Adjust ring sizes here if needed
-    const ringMaterial = new THREE.MeshBasicMaterial({
-      map: textureLoader.load('https://solar-system.store/saturn_ring.png'),  // Make sure the link is correct
-      side: THREE.DoubleSide,  // Ensure ring is visible from all sides
-      transparent: true,
-    });
-    saturnRing = new THREE.Mesh(ringGeometry, ringMaterial);
-    saturnRing.rotation.x = Math.PI / 2;  // Rotate ring properly
-    saturnRing.position.copy(saturnMesh.position);  // Position it around Saturn
-    scene.add(saturnRing);
-  }
-});
-
     const planetMeshes = [];
     const hoveredPlanets = new Set();
     let earthMesh, earthMoon, jupiterMesh, jupiterMoons = [];
