@@ -127,6 +127,23 @@
       scene.add(mesh);
       planetMeshes.push(mesh);
 
+        // Saturn Rings
+  if (name === 'Saturn') {
+    const ring = new THREE.Mesh(
+      new THREE.RingGeometry(size * 1.5, size * 2.5, 64),
+      new THREE.MeshBasicMaterial({
+        map: textureLoader.load('https://solar-system.store/texture/saturn_rings.webp'),
+        side: THREE.DoubleSide,
+        transparent: true
+      })
+    );
+    ring.rotation.x = Math.PI / 2;
+    ring.position.set(distance, 0, 0);
+    scene.add(ring);
+  }
+});
+
+
       // Add Earth's Moon
       if (planetData.name === 'Earth') {
         earthMesh = mesh;
