@@ -1,7 +1,13 @@
-<!DOCTYPE html>
+why does saturns ring did not gets bigger here   <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="solar system" content="planets revolve around the sun earth and jupiter and venus and mars.">
+  <meta
+  name="solar system"
+  content="planets revolve around the sun earth and jupter and vinus and mars and and and.">
+  <meta name="google-adsense-account" content="ca-pub-1143626683706586">
+  <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Solar System</title>
   <style>
@@ -35,18 +41,85 @@
       border-radius: 5px;
       display: none;
     }
+
+}
+     #info3 {
+      position: absolute;
+      bottom: 15px;
+      left: -10px;
+      color: rgb(255, 255, 255);
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      background: rgb(255, 128, 0);
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+}
+         #info4 {
+      position: absolute;
+      bottom: 15px;
+      right: -10px;
+      color: rgb(255, 255, 255);
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+      writing-mode: vertical-lr; /* This makes the text vertical */
+    }
+
+}
+    
+    
+    
+
+
   </style>
 </head>
 <body>
+  <amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-1143626683706586">
+</amp-auto-ads>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1143626683706586"
+     crossorigin="anonymous"></script>
+<!-- سن -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:150px;height:50px"
+     data-ad-client="ca-pub-1143626683706586"
+     data-ad-slot="9184590023"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+   <div id="info3">
+<a href="/teams">Terms & Conditions</a>
+<a href="/Privcy">Privacy Policy</a>
+<a href="/call">Contact Us</a>
+     
+      <div id="info4">
+<a href="/mercury.html">Explore Merucury</a>
+<a href="/venus.html">Explore Venus!</a>
+ <a href="/earth.html">Explore Earth!</a>
+ <a href="/mars.html">Explore Mars!</a>
+ <a href="/jupiter.html">Explore Jupiter!</a>
+   <a href="/saturn.html">Explore Saturn!</a>
+  <a href="/uranus.html">Explore Uranus!</a>
+     <a href="/neptune.html">Explore Neptune!</a>
 
+
+     
+     
   <div id="info">
-    <p><strong>SOLAR System</strong><br>Click on the planets to see information</p>
-    <p>Made by: Karam A. and Karam E.</p>
+    <p><strong>SOLAR System
+
+      click on the planets to see information
+    </strong></p>
+    <p>Made by : Karam A.</p>
   </div>
   <div id="planet-info"></div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script>
+     <script>
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -66,48 +139,116 @@
     const pointLight = new THREE.PointLight(0xffffff, 1.5);
     pointLight.position.set(0, 0, 0);
     scene.add(pointLight);
-
-    // Sun
-    const sunTexture = textureLoader.load('https://solar-system.store/texture/high_res_sun-min.webp');
+const sunTexture = textureLoader.load('https://solar-system.store/texture/high_res_sun-min.webp');
     const sunGeometry = new THREE.SphereGeometry(25, 128, 128);
     const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
     const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-    sun.userData = { name: 'Sun', info: '<a href="/Sun.html">Explore more!</a>' };
+    sun.userData = { name: 'Sun', info: `<a href="/Sun.html">Explore more!</a>` };
     scene.add(sun);
 
-    const planets = [
-      { name: 'Mercury', texture: 'https://solar-system.store/texture/high_res_mercury-min.webp', size: 12, distance: 45, info: 'Mercury is the closest planet to the Sun and the smallest in the Solar System. <a href="/mercury.html">Explore more!</a>' },
-      { name: 'Venus', texture: 'https://solar-system.store/texture/high_res_venus-min.webp', size: 14, distance: 70, info: '<a href="/venus.html">Explore more!</a>' },
-      { name: 'Earth', texture: 'https://solar-system.store/texture/high_res_earth-min.webp', size: 15, distance: 100, info: 'Only known planet to harbor life. <a href="/earth.html">Explore more!</a>' },
-      { name: 'Mars', texture: 'https://solar-system.store/texture/high_res_mars-min.webp', size: 13, distance: 150, info: '<a href="/mars.html">Explore more!</a>' },
-      { name: 'Jupiter', texture: 'https://solar-system.store/texture/high_res_jupiter-min.webp', size: 22, distance: 200, info: '<a href="/jupiter.html">Explore more!</a>' },
-      { name: 'Saturn', texture: 'https://solar-system.store/texture/high_res_saturn-min.webp', size: 20, distance: 250, info: '<a href="/saturn.html">Explore more!</a>' },
-      { name: 'Uranus', texture: 'https://solar-system.store/texture/high_res_uranus-min.webp', size: 17, distance: 300, info: '<a href="/uranus.html">Explore more!</a>' },
-      { name: 'Neptune', texture: 'https://solar-system.store/texture/high_res_neptune-min.webp', size: 17, distance: 350, info: '<a href="/neptune.html">Explore more!</a>' }
-    ];
+
+ const planets = [
+  { 
+    name: 'Mercury', 
+    texture: 'https://solar-system.store/texture/high_res_mercury-min.webp', 
+    size: 12, 
+    distance:  45, 
+    info: `
+      <strong></strong><br>
+      Mercury is the closest planet to the Sun and the smallest in the Solar System4
+       <a href="/mercury.html">Explore more!</a>
+    `
+  },
+  { 
+    name: 'Venus', 
+    texture: 'https://solar-system.store/texture/high_res_venus-min.webp', 
+    size: 14, 
+    distance: 	70 , 
+    info: `
+      <strong></strong><br>
+        <a href="/venus.html">Explore more!</a>
+    `
+  },
+  { 
+    name: 'Earth', 
+    texture: 'https://solar-system.store/texture/high_res_earth-min.webp', 
+    size: 15, 
+    distance: 100 , 
+    info: `
+      <strong></strong><br>
+      Only known planet to harbor life.</br>
+      <a href="/earth.html">Explore more!</a>
+    `
+  },
+  { 
+    name: 'Mars', 
+    texture: 'https://solar-system.store/texture/high_res_mars-min.webp', 
+    size: 13, 
+    distance: 150 , 
+    info: `
+      <strong></strong><br>
+       <a href="/mars.html">Explore more!</a>
+    `
+  },
+  { 
+    name: 'Jupiter', 
+    texture: 'https://solar-system.store/texture/high_res_jupiter-min.webp', 
+    size: 22, 
+    distance: 200 , 
+    info: `
+      <strong></strong><br>
+        <a href="/jupiter.html">Explore more!</a>
+    `
+  },
+  { 
+    name: 'Saturn', 
+    texture: 'https://solar-system.store/texture/high_res_saturn-min.webp', 
+    size: 20, 
+    distance: 250  , 
+    info: `
+      <strong></strong><br>
+       <a href="/saturn.html">Explore more!</a>
+    `
+  },
+  { 
+    name: 'Uranus', 
+    texture: 'https://solar-system.store/texture/high_res_uranus-min.webp', 
+    size: 17, 
+    distance: 300, 
+    info: `
+      <strong></strong><br>
+      <a href="/uranus.html">Explore more!</a>
+    `
+  },
+  { 
+    name: 'Neptune', 
+    texture: 'https://solar-system.store/texture/high_res_neptune-min.webp', 
+    size: 17, 
+    distance:  350, 
+    info: `
+      <strong></strong><br>
+       <a href="/neptune.html">Explore more!</a>
+    `
+  }
+];
 
 
-    planets.forEach((planetData) => {
-  // Orbit Path
-  const orbitGeometry = new THREE.RingGeometry(planetData.distance - 0.1, planetData.distance + 0.9, 128);
-  const orbitMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-  const orbitMesh = new THREE.Mesh(orbitGeometry, orbitMaterial);
-  orbitMesh.rotation.x = Math.PI / 2;
-  scene.add(orbitMesh);
-
-  // Planet Mesh
-  const texture = textureLoader.load(planetData.texture);
-  const geometry = new THREE.SphereGeometry(planetData.size, 128, 128);
-  const material = new THREE.MeshStandardMaterial({ map: texture });
-  const mesh = new THREE.Mesh(geometry, material);
-  mesh.position.x = planetData.distance;
-  mesh.userData = { name: planetData.name, info: planetData.info };
-  scene.add(mesh);
-  planetMeshes.push(mesh);
 
     const planetMeshes = [];
-    const hoveredPlanets = new Set();
-    let earthMesh, earthMoon, jupiterMesh, jupiterMoons = [];
+    const hoveredPlanets = new Set(); // Track hovered planets
+    let jupiterMesh, saturnMesh,saturnRing, earthMesh, earthMoon, jupiterMoons = [];
+
+    planets.forEach((planetData) => {
+      // Orbit Path
+      const orbitGeometry = new THREE.RingGeometry(planetData.distance - 0.1, planetData.distance + 0.9, 128);
+      const orbitMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+      const orbitMesh = new THREE.Mesh(orbitGeometry, orbitMaterial);
+      orbitMesh.rotation.x = Math.PI / 2;
+      scene.add(orbitMesh);
+
+    const planetMeshes = [];
+    const hoveredPlanets = new Set(); // Track hovered planets
+    let jupiterMesh, saturnMesh, saturnRing, earthMesh, earthMoon, jupiterMoons = [];
 
     planets.forEach((planetData) => {
       // Orbit Path
@@ -127,26 +268,10 @@
       scene.add(mesh);
       planetMeshes.push(mesh);
 
-        // Saturn Rings
-  if (name === 'Saturn') {
-    const ring = new THREE.Mesh(
-      new THREE.RingGeometry(size * 1.5, size * 2.5, 64),
-      new THREE.MeshBasicMaterial({
-        map: textureLoader.load('https://solar-system.store/texture/saturn_rings.webp'),
-        side: THREE.DoubleSide,
-        transparent: true
-      })
-    );
-    ring.rotation.x = Math.PI / 2;
-    ring.position.set(distance, 0, 0);
-    scene.add(ring);
-  }
-});
-
-
       // Add Earth's Moon
       if (planetData.name === 'Earth') {
         earthMesh = mesh;
+
         const moonTexture = textureLoader.load('https://solar-system.store/texture/high_res_moon-min.webp');
         const moonGeometry = new THREE.SphereGeometry(5, 64, 64);
         const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
@@ -155,10 +280,10 @@
         scene.add(earthMoon);
       }
 
-
       // Add Jupiter Moons
       if (planetData.name === 'Jupiter') {
         jupiterMesh = mesh;
+
         const jupiterMoonData = [
           { name: 'Io', size: 5, distance: 30 },
           { name: 'Europa', size: 4, distance: 40 },
@@ -177,6 +302,22 @@
           jupiterMoons.push({ mesh: moonMesh, distance: moonData.distance });
         });
       }
+
+      // Add Saturn Ring
+      if (planetData.name === 'Saturn') {
+        saturnMesh = mesh;
+
+        const ringGeometry = new THREE.RingGeometry(25, 40, 64);
+        const ringMaterial = new THREE.MeshBasicMaterial({
+          map: textureLoader.load('https://solar-system.store/saturn_ring.png'),
+          side: THREE.DoubleSide,
+          transparent: true,
+        });
+        saturnRing = new THREE.Mesh(ringGeometry, ringMaterial);
+        saturnRing.rotation.x = Math.PI / 2;
+        saturnRing.position.copy(saturnMesh.position);
+        scene.add(saturnRing);
+      }
     });
 
     // Raycaster for interaction
@@ -186,18 +327,24 @@
     // Mouse Move Event for Hover
     window.addEventListener('mousemove', (event) => {
       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 1.8 + 1;
 
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObjects(planetMeshes, true);
 
       hoveredPlanets.clear();
       planetMeshes.forEach((planet) => (planet.scale.set(1, 1, 1))); // Reset scale
+      if (saturnRing) saturnRing.scale.set(1, 1, 1); // Reset ring scale
 
       if (intersects.length > 0) {
         const planet = intersects[0].object;
         hoveredPlanets.add(planet);
-        planet.scale.set(5, 5, 5); // Enlarge hovered planet
+        planet.scale.set(1.2, 1.2, 1.2); // Enlarge hovered planet
+
+        // Scale Saturn's ring if Saturn is hovered
+        if (planet === saturnMesh && saturnRing) {
+          saturnRing.scale.set(1.2, 1.2, 1.2); // Scale the ring
+        }
       }
     });
 
@@ -222,34 +369,50 @@
       requestAnimationFrame(animate);
 
       planetMeshes.forEach((planet, index) => {
-        const orbitalSpeed = 0.009 / Math.sqrt(planets[index].distance);
-        const angle = Date.now() * orbitalSpeed;
-        planet.position.x = planets[index].distance * Math.cos(angle);
-        planet.position.z = planets[index].distance * Math.sin(angle);
-        planet.rotation.y += 0.01;
+        if (!hoveredPlanets.has(planet)) {
+          // Orbital speed inversely proportional to square root of distance
+          const orbitalSpeed = 0.009 / Math.sqrt(planets[index].distance); // Faster for closer planets
+          const angle = Date.now() * orbitalSpeed;
+          planet.position.x = planets[index].distance * Math.cos(angle);
+          planet.position.z = planets[index].distance * Math.sin(angle);
+        }
+        planet.rotation.y += 0.01; // Planet rotation
       });
 
       // Animate Earth's Moon
       if (earthMesh && earthMoon) {
-        const moonAngle = Date.now() * 0.0005;
+        const moonAngle = Date.now() * 0.0005; // Faster moon orbit
         earthMoon.position.x = earthMesh.position.x + 25 * Math.cos(moonAngle);
         earthMoon.position.z = earthMesh.position.z + 25 * Math.sin(moonAngle);
       }
 
       // Animate Jupiter's Moons
       if (jupiterMesh && jupiterMoons.length > 0) {
-        jupiterMoons.forEach((moon) => {
-          const moonAngle = Date.now() * 0.0005;
+        jupiterMoons.forEach((moon, index) => {
+          const moonAngle = Date.now() * 0.0001 * (index + 1);
           moon.mesh.position.x = jupiterMesh.position.x + moon.distance * Math.cos(moonAngle);
           moon.mesh.position.z = jupiterMesh.position.z + moon.distance * Math.sin(moonAngle);
         });
       }
 
+      // Update Saturn Ring Position
+      if (saturnRing && saturnMesh) {
+        saturnRing.position.copy(saturnMesh.position);
+      }
+
       renderer.render(scene, camera);
     }
-
     animate();
-  </script>
 
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
+  </script>
 </body>
 </html>
