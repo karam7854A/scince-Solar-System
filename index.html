@@ -285,7 +285,7 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
       if (intersects.length > 0) {
         const planet = intersects[0].object;
         hoveredPlanets.add(planet);
-        planet.scale.set(1.2, 1.2, 1.2); // Enlarge hovered planet
+        planet.scale.set(2, 2, 2); // Enlarge hovered planet
 
         // Scale Saturn's ring if Saturn is hovered
         if (planet === saturnMesh && saturnRing) {
