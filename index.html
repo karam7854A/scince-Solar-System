@@ -273,7 +273,7 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
     // Mouse Move Event for Hover
     window.addEventListener('mousemove', (event) => {
       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 1.8 + 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObjects(planetMeshes, true);
@@ -289,7 +289,7 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
 
         // Scale Saturn's ring if Saturn is hovered
         if (planet === saturnMesh && saturnRing) {
-          saturnRing.scale.set(1.2, 1.2, 1.2); // Scale the ring
+          saturnRing.scale.set(2, 2, 2); // Scale the ring
         }
       }
     });
