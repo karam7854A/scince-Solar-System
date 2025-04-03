@@ -71,11 +71,6 @@
     }
 
 }
-    
-    
-    
-
-
   </style>
 </head>
 <body>
@@ -230,23 +225,7 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
        <a href="/neptune.html">Explore more!</a>
     `
   }
-];
-
-
-
-    const planetMeshes = [];
-    const hoveredPlanets = new Set(); // Track hovered planets
-    let jupiterMesh, saturnMesh,saturnRing, earthMesh, earthMoon, jupiterMoons = [];
-
-    planets.forEach((planetData) => {
-      // Orbit Path
-      const orbitGeometry = new THREE.RingGeometry(planetData.distance - 0.1, planetData.distance + 0.9, 128);
-      const orbitMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-      const orbitMesh = new THREE.Mesh(orbitGeometry, orbitMaterial);
-      orbitMesh.rotation.x = Math.PI / 2;
-      scene.add(orbitMesh);
-
-    const planetMeshes = [];
+];    const planetMeshes = [];
     const hoveredPlanets = new Set(); // Track hovered planets
     let jupiterMesh, saturnMesh, saturnRing, earthMesh, earthMoon, jupiterMoons = [];
 
@@ -410,9 +389,6 @@ const sunTexture = textureLoader.load('https://solar-system.store/texture/high_r
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
-  </script>
-</body>
-</html>
   </script>
 </body>
 </html>
